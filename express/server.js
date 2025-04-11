@@ -34,7 +34,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// ============================================= CREATE Product =============================================
+// ============================== CREATE Product ==============================
 app.post("/products", async (req, res) => {
   const { name } = req.body;
   const { price } = req.body;
@@ -57,7 +57,7 @@ app.post("/products", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
-// ============================================ READ Product ============================================
+// ============================ READ Product ============================
 app.get("/products", async (req, res) => {
   console.log("123123123");
   try {
@@ -68,7 +68,7 @@ app.get("/products", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
-// ============================================ READ Specific Product ============================================
+// ======================== READ Specific Product ========================
 app.get("/products/:name", async (req, res) => {
   const { name } = req.params;
   try {
@@ -83,7 +83,7 @@ app.get("/products/:name", async (req, res) => {
   }
 });
 
-// =========================================== UPDATE Product ========================================
+// =========================== UPDATE Product ============================
 
 app.put("/products/:name", async (req, res) => {
   const oldName = req.params.name;
@@ -105,7 +105,7 @@ app.put("/products/:name", async (req, res) => {
   }
 });
 
-// =============================================== DELETE Product ===============================================
+// ==================== DELETE Product ========================
 
 app.delete("/products/:name", async (req, res) => {
   const { name } = req.params;
@@ -127,7 +127,7 @@ app.delete("/products/:name", async (req, res) => {
   }
 });
 
-// =============================================== Listening ===============================================
+// ========================== Listening ==========================
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
