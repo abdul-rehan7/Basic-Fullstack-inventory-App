@@ -10,7 +10,7 @@ app.use(
     origin: "http://localhost:5173",
   })
 );
-
+// ============================== Adding PostgreSQL Confg details ==============================
 app.use(bodyParser.json());
 const client = new Client({
   user: "postgres",

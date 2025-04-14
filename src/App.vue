@@ -197,7 +197,7 @@ export default {
     price: this.newProd.price,
     desc: this.newProd.desc,
   };
-
+// ============================================= Updating Products =============================================
   try {
     const res = await fetch(`http://localhost:5000/products/${oldName}`, {
       method: "PUT",
@@ -216,6 +216,8 @@ export default {
 }
 ,
 
+// ========================================= New Product =========================================
+
     async addProd() {
       if (!this.newProd.name) return;
 
@@ -233,6 +235,9 @@ export default {
         console.error("Error adding todo:", error);
       }
     },
+
+    // ====================================== Deleting Product ======================================
+
     async deleteProd(name) {
       try {
         await axios.delete(`http://localhost:5000/products/${name}`);
